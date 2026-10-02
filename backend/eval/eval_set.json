@@ -1,0 +1,17 @@
+[
+  {"id":"agg1","category":"aggregation","question":"What is the total revenue?","expected":{"metric":"revenue","agg":"sum"}},
+  {"id":"agg2","category":"aggregation","question":"How many units were sold in total?","expected":{"metric":"units","agg":"sum"}},
+  {"id":"cmp1","category":"comparison","question":"Compare North vs South revenue","expected":{"dimension":"region","metric":"revenue"}},
+  {"id":"cmp2","category":"comparison","question":"Compare revenue for Widget A vs Widget B","expected":{"dimension":"product","metric":"revenue"}},
+  {"id":"trd1","category":"trend","question":"Show monthly revenue trend","expected":{"time_bucket":"month","metric":"revenue"}},
+  {"id":"trd2","category":"trend","question":"Quarterly revenue trend","expected":{"time_bucket":"quarter","metric":"revenue"}},
+  {"id":"rnk1","category":"ranking","question":"Which region generated the highest revenue?","expected":{"dimension":"region","metric":"revenue","top":1}},
+  {"id":"rnk2","category":"ranking","question":"Which product generated the highest revenue?","expected":{"dimension":"product","metric":"revenue","top":1}},
+  {"id":"rnk3","category":"ranking","question":"Top 2 products by units","expected":{"dimension":"product","metric":"units","top":2}},
+  {"id":"anm1","category":"anomaly","question":"Any revenue anomalies by month?","expected":{"time_bucket":"month","metric":"revenue"}},
+  {"id":"rsn1","category":"reason","question":"Why did revenue decrease in July?","expected":{"time_bucket":"month","metric":"revenue"}},
+  {"id":"rsn2","category":"reason","question":"Why did North revenue change?","expected":{"dimension":"region","metric":"revenue"}},
+  {"id":"fai1","category":"insufficient","question":"What is the profit margin by customer?","expected":{"failure":"insufficient_data"}},
+  {"id":"fai2","category":"ambiguous","question":"Show me the numbers","expected":{"failure":"ambiguous_question"}},
+  {"id":"fai3","category":"insufficient","question":"Forecast next quarter revenue","expected":{"failure":"insufficient_data"}}
+]
